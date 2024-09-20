@@ -32,6 +32,11 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env:
+          AUTH_SECRET: ${{ secrets.COST_MANAGEMENT_AUTH_SECRET }}
+          AUTH_MICROSOFT_ENTRA_ID_ID: ${{ secrets.COST_MANAGEMENT_AUTH_MICROSOFT_ENTRA_ID_ID }}
+          AUTH_MICROSOFT_ENTRA_ID_SECRET: ${{ secrets.COST_MANAGEMENT_AUTH_MICROSOFT_ENTRA_ID_SECRET }}
+          AUTH_MICROSOFT_ENTRA_ID_TENANT_ID: ${{ secrets.COST_MANAGEMENT_AUTH_MICROSOFT_ENTRA_ID_TENANT_ID }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

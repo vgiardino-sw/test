@@ -1,0 +1,40 @@
+{
+    "name": "Azure Cost Management",
+    "description": "A stunning and functional application for monitoring your costs.",
+    "url": "https://your-domain.com",
+    "defaultLocale": "en",
+    "brand": "TechTitans",
+    "companyName": "SOUTHWORKS",
+    "companyLink": "https://www.southworks.com/",
+    "social": {
+      "twitter": "@yourtwitterhandle"
+    },
+    "hero": {
+      "title": "Azure Cost Management",
+      "description": "A stunning and functional application for monitoring your costs.",
+      "cta": {
+        "primary": {
+          "text": "Get Started",
+          "href": "/dashboard"
+        },
+        "secondary": {
+          "text": "Learn More",
+          "href": "https://ui.shadcn.com/"
+        }
+      }
+    },
+    "adminPanel": {
+      "menu": {
+        "signOut": "Sign out"
+      },
+      "userNav": {
+        "profile": "Profile",
+        "dashboard": "Dashboard",
+        "account": "Account",
+        "signOut": "Sign out"
+        }
+    },
+    "theme": {
+      "switchTheme": "Switch Theme"
+    }
+}
