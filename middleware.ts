@@ -14,7 +14,7 @@ import { getRoles, hasRole, hasAnyRole, isValidAuthentication } from "@/lib/auth
 export const config = {
   // https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
   matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico|demo-light.png|demo-dark.png|demo-mobile-light.png|demo-mobile-dark.png|auth$).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|.*.swa|demo-light.png|demo-dark.png|demo-mobile-light.png|demo-mobile-dark.png|auth$).*)",
   ],};
 
 
