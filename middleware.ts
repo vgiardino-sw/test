@@ -26,7 +26,7 @@ export default auth((req: AuthenticatedNextRequest) => {
     const isLoginRoute = checkLoginRoute(nextUrl.pathname);
     const isAdminRoute = checkAdminRoute(nextUrl.pathname);
     const isUserRoute = checkUserRoute(nextUrl.pathname);
-    
+    console.log("isAuthenticated: ", isAuthenticated)
     if (isLoginRoute && isAuthenticated) {
       return redirectToDashboard(nextUrl);
     }

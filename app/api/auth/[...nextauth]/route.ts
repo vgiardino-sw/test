@@ -16,9 +16,11 @@ const reqWithTrustedOrigin = (req: NextRequest): NextRequest => {
 }
 
 export const GET = (req: NextRequest) => {
+    console.log("Headers GET:", req.headers.get('x-forwarded-proto'), req.headers.get('x-forwarded-host'));
 	return handlers.GET(reqWithTrustedOrigin(req))
 }
 
 export const POST = (req: NextRequest) => {
+    console.log("Headers POST:", req.headers.get('x-forwarded-proto'), req.headers.get('x-forwarded-host'));
 	return handlers.POST(reqWithTrustedOrigin(req))
 }
