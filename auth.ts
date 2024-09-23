@@ -6,7 +6,7 @@ export const {
   auth,
   signIn,
   signOut,
-  handlers: { GET, POST },
+  handlers,
 } = NextAuth({
   ...authConfig,
 });
