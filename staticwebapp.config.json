@@ -73,6 +73,8 @@
         }
     },
     "globalHeaders": {
-        "Cache-Control": "no-cache"
+        "Cache-Control": "no-cache",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS"
     }
 }
