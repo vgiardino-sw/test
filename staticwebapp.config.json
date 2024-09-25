@@ -1,0 +1,77 @@
+{
+    "routes": [
+        {
+            "route": "/dashboard/*",
+            "allowedRoles": ["authenticated"]
+        },
+        {
+            "route": "/login",
+            "allowedRoles": ["anonymous"]
+        },
+        {
+            "route": "/.auth/login/aad",
+            "allowedRoles": ["anonymous"]
+        },
+        {
+            "route": "/logout",
+            "allowedRoles": ["authenticated"],
+            "rewrite": "/.auth/logout"
+        },
+        {
+            "route": "/.auth/login/apple",
+            "allowedRoles": ["anonymous", "authenticated"],
+            "statusCode": 404
+        },
+        {
+            "route": "/.auth/login/facebook",
+            "allowedRoles": ["anonymous", "authenticated"],
+            "statusCode": 404
+        },
+        {
+            "route": "/.auth/login/github",
+            "allowedRoles": ["anonymous", "authenticated"],
+            "statusCode": 404
+        },
+        {
+            "route": "/.auth/login/google",
+            "allowedRoles": ["anonyous", "authenticated"],
+            "statusCode": 404
+        },
+        {
+            "route": "/.auth/login/twitter",
+            "allowedRoles": ["anonymous", "authenticated"],
+            "statusCode": 404
+        },
+        {
+            "route": "/admin",
+            "allowedRoles": ["admin"]
+        }
+    ],
+    "responseOverrides": {
+        "401": {
+            "statusCode": 302,
+            "redirect": "/login"
+        }
+    },
+   "auth": {
+        "rolesSource": "/api/token",
+        "identityProviders": {
+            "azureActiveDirectory": {
+                "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+                "registration": {
+                    "openIdIssuer": "https://login.microsoftonline.com/b25036e3-de39-4fec-a4aa-bda41b870d38",
+                    "clientIdSettingName": "AUTH_MICROSOFT_ENTRA_ID_ID",
+                    "clientSecretSettingName": "AUTH_MICROSOFT_ENTRA_ID_SECRET"
+                },
+                "login": {
+                    "loginParameters": [
+                        "resource=https://graph.microsoft.com"
+                    ]
+                }
+            }
+        }
+    },
+    "globalHeaders": {
+        "Cache-Control": "no-cache"
+    }
+}
