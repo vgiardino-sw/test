@@ -30,7 +30,7 @@ export default function Home() {
       .finally(() => {
         setIsLoading(false);
       });
-    fetch("/.auth/me")
+    fetch("https://costmanagementapi.azurewebsites.net/api/test/public")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Error: ${res.status}`);
