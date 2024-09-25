@@ -8,7 +8,7 @@ export default function Home() {
 
     useEffect(() => {
         // Fetch the response from the server-side API
-        fetch('/api/token')
+        fetch('/api/roles')
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`Error: ${res.status}`);
