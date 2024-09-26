@@ -12,7 +12,7 @@ export function checkLoginRoute3(pathname: string) {
 }
 
 export function redirectToLogin(nextUrl: URL) {
-  return NextResponse.redirect(new URL("/sign-in", nextUrl.origin));
+  return NextResponse.redirect(new URL("/login2", nextUrl.origin));
 }
 
 export function redirectToDashboard(nextUrl: URL) {

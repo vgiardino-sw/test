@@ -31,16 +31,16 @@ export default auth((req: AuthenticatedNextRequest) => {
     const isAdminRoute = checkAdminRoute(nextUrl.pathname);
     const isUserRoute = checkUserRoute(nextUrl.pathname);
     console.log("isAuthenticated: ", isAuthenticated)
-    if (isLoginRoute && isAuthenticated) {
-      return redirectToDashboard(nextUrl);
-    }
+    // if (isLoginRoute && isAuthenticated) {
+    //   return redirectToDashboard(nextUrl);
+    // }
     if (isLogin2Route && isAuthenticated) {
         return redirectToDashboard(nextUrl);
     }
-    if (isLogin3Route && isAuthenticated) {
-        return redirectToDashboard(nextUrl);
-    }
-    if ((!isLoginRoute || !isLogin2Route || !isLogin3Route) && !isAuthenticated) {
+    // if (isLogin3Route && isAuthenticated) {
+    //     return redirectToDashboard(nextUrl);
+    // }
+    if (!isLogin2Route && !isAuthenticated) {
       return redirectToLogin(nextUrl);
     }
     const roles = getRoles(req);
