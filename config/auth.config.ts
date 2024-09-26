@@ -6,9 +6,6 @@ import { jwtDecode } from "jwt-decode";
 import { tokenEndpoint, scope } from "@/config/constants";
 
 export const authConfig = {
-  pages: {
-    signIn: "/login",
-  },
   providers: [
     // https://authjs.dev/getting-started/providers/microsoft-entra-id
     MicrosoftEntraID({
