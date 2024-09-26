@@ -1,6 +1,7 @@
 import LoginForm from "@/components/auth/login-form";
 import { LogIn } from "lucide-react";
 
+export const dynamic = 'force-dynamic'
 export default function LoginDisplay() {
   return (
     <div>
