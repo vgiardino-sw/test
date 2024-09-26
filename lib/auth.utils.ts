@@ -5,15 +5,15 @@ export function isValidAuthentication(req: AuthenticatedNextRequest): boolean {
     if (!session?.user) {
       return false;
     }
-    const token = session.idToken;
-    if (!token) {
-      return false;
-    }
-    const currentTime = Math.floor(Date.now() / 1000);
-    if (session.exp && session.exp < currentTime) {
-      console.log("Token has expired");
-      return false;
-    }
+    // const token = session.idToken;
+    // if (!token) {
+    //   return false;
+    // }
+    // const currentTime = Math.floor(Date.now() / 1000);
+    // if (session.exp && session.exp < currentTime) {
+    //   console.log("Token has expired");
+    //   return false;
+    // }
     return true;
   }
   
