@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import {
   checkAdminRoute,
-  checkLogin2Route,
   checkLoginRoute,
   checkUserRoute,
   redirectToDashboard,
