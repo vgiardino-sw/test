@@ -3,7 +3,7 @@ const nextConfig = {
     async redirects() {
         return [
           {
-            source: '/',
+            source: '/((?!.swa).*)',
             destination: '/auth',
             permanent: true,
           },

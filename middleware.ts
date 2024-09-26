@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import {
   checkAdminRoute,
+  checkLogin2Route,
   checkLoginRoute,
   checkUserRoute,
   redirectToDashboard,
@@ -24,13 +25,16 @@ export default auth((req: AuthenticatedNextRequest) => {
     const isAuthenticated = isValidAuthentication(req);
 
     const isLoginRoute = checkLoginRoute(nextUrl.pathname);
+    const isLogin2Route = checkLogin2Route(nextUrl.pathname);
     const isAdminRoute = checkAdminRoute(nextUrl.pathname);
     const isUserRoute = checkUserRoute(nextUrl.pathname);
     console.log("isAuthenticated: ", isAuthenticated)
     if (isLoginRoute && isAuthenticated) {
       return redirectToDashboard(nextUrl);
     }
-
+    if (isLogin2Route && isAuthenticated) {
+        return redirectToDashboard(nextUrl);
+      }
     if (!isLoginRoute && !isAuthenticated) {
       return redirectToLogin(nextUrl);
     }

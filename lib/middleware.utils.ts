@@ -4,6 +4,10 @@ export function checkLoginRoute(pathname: string) {
   return ["/login"].includes(pathname);
 }
 
+export function checkLogin2Route(pathname: string) {
+  return ["/login2"].includes(pathname);
+}
+
 export function redirectToLogin(nextUrl: URL) {
   return NextResponse.redirect(new URL("/login", nextUrl.origin));
 }
