@@ -8,6 +8,7 @@ import {
   checkUserRoute,
   redirectToDashboard,
   redirectToLogin,
+  redirectToLogin2,
   rewriteToDenied,
 } from "@/lib/middleware.utils";
 import { AuthenticatedNextRequest } from "@/types/middleware.types";
@@ -40,7 +41,7 @@ export default auth((req: AuthenticatedNextRequest) => {
     // if (isLogin3Route && isAuthenticated) {
     //     return redirectToDashboard(nextUrl);
     // }
-    if (!isLogin2Route && !isAuthenticated) {
+    if (!isLoginRoute && !isLogin2Route && !isAuthenticated) {
       return redirectToLogin(nextUrl);
     }
     const roles = getRoles(req);

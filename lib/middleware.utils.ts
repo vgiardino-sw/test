@@ -14,6 +14,9 @@ export function checkLoginRoute3(pathname: string) {
 export function redirectToLogin(nextUrl: URL) {
   return NextResponse.redirect(new URL("/login", nextUrl.origin));
 }
+export function redirectToLogin2(nextUrl: URL) {
+  return NextResponse.redirect(new URL("/login2", nextUrl.origin));
+}
 
 export function redirectToDashboard(nextUrl: URL) {
   return NextResponse.redirect(new URL("/auth", nextUrl.origin));
