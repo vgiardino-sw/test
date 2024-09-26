@@ -1,5 +1,4 @@
 import LoginForm from "@/components/auth/login-form";
-import LoginPolicy from "@/components/auth/login-policy";
 import { LogIn } from "lucide-react";
 
 export default function LoginDisplay() {
