@@ -1,11 +1,18 @@
 import { NextResponse } from "next/server";
 
 export function checkLoginRoute(pathname: string) {
-  return ["/auth/signin"].includes(pathname);
+  console.log("path", pathname)
+  return ["/login"].includes(pathname);
+}
+export function checkLoginRoute2(pathname: string) {
+  return ["/login2"].includes(pathname);
+}
+export function checkLoginRoute3(pathname: string) {
+  return ["/sign-in"].includes(pathname);
 }
 
 export function redirectToLogin(nextUrl: URL) {
-  return NextResponse.redirect(new URL("/auth/login", nextUrl.origin));
+  return NextResponse.redirect(new URL("/sign-in", nextUrl.origin));
 }
 
 export function redirectToDashboard(nextUrl: URL) {

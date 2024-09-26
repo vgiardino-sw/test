@@ -3,6 +3,8 @@ import { auth } from "@/auth";
 import {
   checkAdminRoute,
   checkLoginRoute,
+  checkLoginRoute2,
+  checkLoginRoute3,
   checkUserRoute,
   redirectToDashboard,
   redirectToLogin,
@@ -24,13 +26,21 @@ export default auth((req: AuthenticatedNextRequest) => {
     const isAuthenticated = isValidAuthentication(req);
 
     const isLoginRoute = checkLoginRoute(nextUrl.pathname);
+    const isLogin2Route = checkLoginRoute2(nextUrl.pathname);
+    const isLogin3Route = checkLoginRoute3(nextUrl.pathname);
     const isAdminRoute = checkAdminRoute(nextUrl.pathname);
     const isUserRoute = checkUserRoute(nextUrl.pathname);
     console.log("isAuthenticated: ", isAuthenticated)
     if (isLoginRoute && isAuthenticated) {
       return redirectToDashboard(nextUrl);
     }
-    if (!isLoginRoute && !isAuthenticated) {
+    if (isLogin2Route && isAuthenticated) {
+        return redirectToDashboard(nextUrl);
+    }
+    if (isLogin3Route && isAuthenticated) {
+        return redirectToDashboard(nextUrl);
+    }
+    if ((!isLoginRoute || !isLogin2Route || !isLogin3Route) && !isAuthenticated) {
       return redirectToLogin(nextUrl);
     }
     const roles = getRoles(req);
